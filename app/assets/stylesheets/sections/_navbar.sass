@@ -1,0 +1,57 @@
+@import "variables/colors"
+.navbar
+  padding: 0.5em 0em
+  background-color: $dark-blue
+
+  .logo
+    font-weight: bold
+    font-size: 3rem
+    color: $white
+    margin-right: 2em
+
+  input[type="search"],input[type="submit"]
+    margin: 5px 0px 0px
+    border: none
+
+    @media (max-width: 662px)
+      display: block
+
+  input[type="search"]
+    border-right: none
+    border-radius: 4px 0px 0px 4px
+    max-width: calc(100% - 42px)
+    min-width: 270px
+
+  input[type="submit"]
+    padding: 1em
+    float: left
+    border-left: none
+    border-radius: 0px 4px 4px 0px
+    margin-bottom: 0
+    line-height: 16px
+    background-color: $white
+    border-color: $white
+    color: $black
+    border-left: 1px solid rgba(0,0,0,0.1)
+
+  .user-edit
+    display: table
+    text-decoration: none
+    margin-top: 5px
+
+    &:hover
+      background-color: lighten($dark-blue, 10%)
+    img
+      height: 38px
+      width: 38px
+      vertical-align: middle
+      margin-right: 1em
+      border-radius: 4px
+
+    span
+      vertical-align: middle
+      color: $white
+      line-height: normal
+
+    @media (max-width: 1020px)
+      display: none

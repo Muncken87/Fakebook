@@ -1,0 +1,80 @@
+// User Interface
+@import "mixins/icons.sass"
+.left-field
+  margin-bottom: 1em
+
+  p
+    display: table-cell
+    vertical-align: middle
+
+  .user-avatar
+    height: 40px
+    width: 40px
+    display: table-cell
+    vertical-align: middle
+
+// Post Content
+.right-field
+
+  .post-user-info
+    margin-bottom: 1em
+
+    &:after
+      display: table
+      content: ""
+      clear: both
+
+    .post-user-image
+      width: 40px
+      height: 40px
+      float: left
+      margin-right: 0.5em
+
+    .post-user-name
+      margin: 0
+      width: 100%
+      color: #365899
+
+    .post-submitted
+      display: block
+      color: #90949c
+
+  .post-image
+
+  .comment-section
+
+    .share,.comment,.like
+      color: #AFB4BD
+      text-decoration: none
+      margin-right: 1em
+
+      &:hover
+        text-decoration: underline
+
+    .share
+      &:before
+        background-image: url('/assets/icons.png')
+        background-position: -45px -181px
+        +icons
+
+    .comment
+      &:before
+        background-image: url('/assets/icons.png')
+        background-position: -32px -164px
+        +icons
+
+  .like
+    &:before
+      background-image: url('/assets/icons.png')
+      background-position: -47px -164px
+      +icons
+
+.sidebar
+  background-color: #fff
+  width: 210px
+  height: 100vh
+  padding: 0.5em
+  position: fixed
+  top: 0
+  right: 0
+  border-left: 1px solid #ccc
