@@ -28,6 +28,10 @@
       <a class="share" href="#">Dela</a>
     </div>
   </div> <!-- end card -->
+
+    <% @posts.each do |post| %>
+      <%= render "walls/post" %>
+    <% end %>
 </div> <!-- end right-field -->
 
 
