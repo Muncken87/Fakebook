@@ -7,6 +7,9 @@
   <%= f.label :last_name %>
   <%= f.text_field :last_name %>
 
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar, multiple: true  %>
+
   <%= f.submit :create %>
 
 <% end %>

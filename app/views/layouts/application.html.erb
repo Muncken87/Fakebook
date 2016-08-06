@@ -9,7 +9,13 @@
   </head>
 
   <body>
-    <%= render partial: "navbar" %>
+    <% if notice %>
+      <p id="notice" class="alert alert-notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p id="alert" class="alert alert-info"><%= alert %></p>
+    <% end %>
+    <%= render partial: "shared/navbar" %>
     <%= yield %>
   </body>
 </html>
