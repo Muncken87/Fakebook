@@ -15,7 +15,6 @@ def new
 end
 
 def create
-  byebug
   @user = User.new(user_params)
   @user.avatar = params[:avatar]
   respond_to do |format|
