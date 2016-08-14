@@ -1,2 +1,16 @@
-<h1><%= @user.first_name %></h1>
-<h1><%= @user.last_name %></h1>
+<div class="container">
+  <div class="user-jumbo"></div>
+  <div class="jumbo-user-details">
+    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg">
+    <h3><%= current_user.username %></h3>
+  </div>
+  <div class="time-line card">
+    <div class="time-line-links u-cf">
+      <a href="#"> Timeline</a>
+      <a href="#"> About</a>
+      <a href="#"> Friends</a>
+      <a href="#"> Photos</a>
+      <a href="#"> More</a>
+    </div>
+  </div>
+</div>

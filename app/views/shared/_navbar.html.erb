@@ -1,19 +1,24 @@
 <nav class="navbar">
   <div class="container">
 
-    <a class="logo three columns">Fakebook</a>
+    <!-- <a class="logo three columns">Fakebook</a> -->
+    <%= link_to 'Facebook', root_path, class: 'logo three columns' %>
 
     <div class="search">
-      <input type="search" value="Sök efter personer,platser och saker"class="five columns">
+      <input type="search" placeholder="Sök efter personer,platser och saker"class="five columns">
       <input type="submit" class="button-primary" value="Go">
     </div>
 
     <div class="user-edit">
       <%= link_to current_user do %>
         <img src="https://s3.amazonaws.com/uifaces/faces/twitter/chadengle/128.jpg">
-        <span><%= current_user.email %></span>
+        <span><%= current_user.username %></span>
       <% end %>
     </div>
-
+    <!-- <% if user_signed_in? %>
+    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+    <% else %>
+    <%= link_to('Login', new_user_session_path) %>
+    <% end %> -->
   </div>
 </nav>

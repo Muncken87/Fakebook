@@ -3,6 +3,10 @@
 .left-field
   margin-bottom: 1em
 
+  @media (max-width: 750px)
+    display: none
+
+
   p
     display: table-cell
     vertical-align: middle
@@ -42,6 +46,23 @@
 
   .post-user-info
     margin-bottom: 1em
+    color: #365899
+    font-weight: bold
+
+    .delete
+      position: absolute
+      right: 14px
+      top: 10px
+      text-decoration: none
+
+    small
+      font-weight: normal
+
+    img
+      height: 40px
+      width: 40px
+      float: left
+      margin-right: 1rem
 
     &:after
       display: table
