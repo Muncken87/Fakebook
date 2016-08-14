@@ -1,6 +1,6 @@
 class WallsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.order("created_at DESC")
     @post = Post.new
     @users = User.all
   end

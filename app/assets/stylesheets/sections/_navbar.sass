@@ -21,6 +21,7 @@
     border-radius: 4px 0px 0px 4px
     max-width: calc(100% - 42px)
     min-width: 270px
+    position: relative
 
   input[type="submit"]
     padding: 1em
@@ -35,23 +36,32 @@
     border-left: 1px solid rgba(0,0,0,0.1)
 
   .user-edit
-    display: table
     text-decoration: none
     margin-top: 5px
+    display: table
+    float: left
+    margin-left: 10px
 
     &:hover
       background-color: lighten($dark-blue, 10%)
+
+    a,span
+      text-decoration: none
+      display: inline-block
+      line-height: 38px
+
     img
       height: 38px
       width: 38px
-      vertical-align: middle
       margin-right: 1em
       border-radius: 4px
+      vertical-align: middle
 
     span
       vertical-align: middle
       color: $white
       line-height: normal
+      padding-right: 10px
 
     @media (max-width: 1020px)
       display: none

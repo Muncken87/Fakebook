@@ -16,6 +16,30 @@
 // Post Content
 .right-field
 
+  label
+    color: #555
+    padding: 0 16px 0px 0px
+    line-height: 22px
+    display: inline-block
+    cursor: pointer
+
+    &:hover
+      background-color: #f6f7f9
+      border-radius: 2px
+
+
+    &:before
+      background-image: url('/assets/fb-icons.png')
+      background-position: 0px -303px
+      background-size: 41px 331px
+      content: ''
+      display: inline-block
+      height: 16px
+      width: 16px
+      margin-right: 5px
+
+
+
   .post-user-info
     margin-bottom: 1em
 
@@ -34,10 +58,14 @@
       margin: 0
       width: 100%
       color: #365899
+      display: block
 
     .post-submitted
       display: block
       color: #90949c
+
+  .post-content
+    word-break: break-word
 
   .post-image
 
