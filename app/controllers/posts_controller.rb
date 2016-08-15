@@ -23,6 +23,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
+    @post.user = current_user
     @post.image = params[:image]
     @post.save
     respond_to do |format|
@@ -71,6 +72,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:content, :image)
+      params.require(:post).permit(:content, :image, :username)
     end
 end

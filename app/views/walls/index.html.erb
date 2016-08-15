@@ -18,9 +18,7 @@
       <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p> -->
       <div class="post-user-info">
         <img src="https://s3.amazonaws.com/uifaces/faces/twitter/chadengle/128.jpg">
-        <% if user_signed_in? %>
-        <%= current_user.username %>
-        <% end %>
+        <%= post.username %>
         <small class="post-submitted"> Submitted <%= time_ago_in_words(post.created_at) %> Ago </small>
        <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete" %>
       </div>

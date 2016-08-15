@@ -4,4 +4,5 @@ class WallsController < ApplicationController
     @post = Post.new
     @users = User.all
   end
+
 end
