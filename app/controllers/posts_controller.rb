@@ -25,7 +25,6 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     @post.user = current_user
     @post.image = params[:image]
-    @post.save
     respond_to do |format|
      if @post.save
         format.html { redirect_to root_path, notice: 'Post was successfully created.' }
