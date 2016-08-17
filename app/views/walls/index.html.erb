@@ -7,7 +7,7 @@
    </div>
   </div> -->
 
-  <div class="twelve columns right-field">
+  <div class="ten columns right-field">
     <%= render "posts/form" %>
 
 
@@ -17,7 +17,7 @@
       <p><%= link_to 'Edit', edit_post_path(post) %></p>
       <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p> -->
       <div class="post-user-info">
-        <img src="https://s3.amazonaws.com/uifaces/faces/twitter/chadengle/128.jpg">
+        <%= image_tag post.avatar %>
         <%= post.username %>
         <small class="post-submitted"> Submitted <%= time_ago_in_words(post.created_at) %> Ago </small>
        <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete" %>
@@ -29,7 +29,7 @@
       <div class="post-image">
         <!-- <img src="http://digitalart.io/wp-content/uploads/2014/03/Armoured-Suit-Sci-fi-Wallpaper.jpg"> -->
         <% if post.image.present? %>
-          <p>  <%= image_tag (post.image_url) %></p>
+          <p>  <%= image_tag (post.image.slider) %></p>
         <% end %>
       </div>
       <hr>

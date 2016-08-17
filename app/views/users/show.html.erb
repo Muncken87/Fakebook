@@ -1,8 +1,9 @@
 <div class="container">
-  <div class="user-jumbo"></div>
+  <div class="user-jumbo">
   <div class="jumbo-user-details">
-    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg">
+    <%= image_tag current_user.avatar %>
     <h3><%= current_user.username %></h3>
+  </div>
   </div>
   <div class="time-line card">
     <div class="time-line-links u-cf">
@@ -13,4 +14,8 @@
       <a href="#"> More</a>
     </div>
   </div>
+  <!-- <%= render 'form' %>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %> -->
 </div>

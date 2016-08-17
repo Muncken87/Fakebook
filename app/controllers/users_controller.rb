@@ -28,6 +28,14 @@ def create
   end
 end
 
+def update
+    if @user.update(params[:user].permit(:first_name,:last_name,:avatar,:email))
+      redirect_to @user
+    else
+      render 'edit'
+    end
+  end
+
 def destroy
   @user.destroy
   respond_to do |format|
