@@ -10,6 +10,10 @@ def show
   @post = @user.posts(params[:page])
 end
 
+def edit
+  @user = User.find(params[:id])
+end
+
 def new
   @user = User.new
 end
@@ -17,6 +21,7 @@ end
 def create
   @user = User.new(user_params)
   @user.avatar = params[:avatar]
+  @user.save
   respond_to do |format|
     if @user.save
       format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -53,6 +58,6 @@ private
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :avatar)
+    params.require(:user).permit(:first_name, :last_name, :avatar,:avatar_cache)
   end
 end

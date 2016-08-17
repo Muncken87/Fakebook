@@ -8,8 +8,8 @@
   </div> -->
 
   <div class="ten columns right-field">
+  <div class="eight columns right-field">
     <%= render "posts/form" %>
-
 
   <% @posts.each do |post| %>
   <div class="card">
@@ -30,6 +30,7 @@
         <!-- <img src="http://digitalart.io/wp-content/uploads/2014/03/Armoured-Suit-Sci-fi-Wallpaper.jpg"> -->
         <% if post.image.present? %>
           <p>  <%= image_tag (post.image.slider) %></p>
+            <%= image_tag (post.image.slider) %>
         <% end %>
       </div>
       <hr>
