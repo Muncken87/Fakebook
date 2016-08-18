@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates_processing_of :avatar
   # Setup accessible (or protected) attributes for your model
 
-  has_many :posts, dependent: :destroy
+  has_many :posts, dependent: :delete_all
   attr_accessor :login
 
   validates :username,
