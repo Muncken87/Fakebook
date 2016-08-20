@@ -1,7 +1,9 @@
 @import 'variables/colors'
+@import 'mixins/icons2.sass'
+
 .user-jumbo
   background-image: url('http://orig03.deviantart.net/45c7/f/2011/333/6/1/steampunk_sketches_a_by_david_nakayama-d4hq89q.jpg')
-  height: 25vh
+  height: 40vh
   width: 100%
   background-size: cover
   background-position: center center
@@ -52,3 +54,35 @@
 
       &:first-child
         border-left: 1px solid #e9eaed
+
+.user-show-experience
+  .intro
+    &:before
+      background-image: url('/assets/icons2.png')
+      background-position: 0 -22px
+      height: 15px
+      width: 15px
+  ul
+    li
+      font-size: 12px
+      text-decoration: none
+      list-style: none
+
+    .work,.school,.status
+      margin-right: 1rem
+
+      &:before
+        background-image: url('/assets/icons2.png')
+
+    .work
+      &:before
+        background-position: 0 -206px
+        +icons2
+    .school
+      &:before
+        background-position: -13px -193px
+        +icons2
+    .status
+      &:before
+        background-position: -13px -166px
+        +icons2

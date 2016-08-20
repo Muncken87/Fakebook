@@ -30,6 +30,8 @@ gem 'devise'
 gem 'carrierwave'
 gem "mini_magick"
 gem 'rmagick'
+gem "animate-rails"
+gem 'best_in_place', '~> 3.0.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -14,8 +14,50 @@
       <a href="#"> More</a>
     </div>
   </div>
-  <%= render 'form' %>
+  <!-- <%= render 'form' %>
 
 <%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', users_path %> -->
+<div class="row">
+  <div class="four columns card user-show-experience">
+    <p class="intro">Introduction</p>
+    <ul>
+      <li class="work">Tidigare Ruby on Rails Developer vid CareerFoundry</li>
+      <li class="work">Tidigare Webbutvecklare vid Sponsorhjälpen AB</li>
+      <li class="school">Har studerat vid Yonsei Korean Language Institute</li>
+      <li class="status">Singel</li>
+    </ul>
+  </div>
+  <div class="eight columns right-field">
+    <% @posts.each do |post| %>
+      <div class="card">
+        <!-- <p><%= link_to 'Show', post %></p>
+        <p><%= link_to 'Edit', edit_post_path(post) %></p>
+        <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p> -->
+        <div class="post-user-info">
+          <%= image_tag post.avatar %>
+          <%= post.username %>
+          <small class="post-submitted"> Submitted <%= time_ago_in_words(post.created_at) %> Ago </small>
+          <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete" %>
+        </div>
+
+        <div class="post-content">
+          <p><%= post.content %></p>
+        </div>
+        <div class="post-image">
+          <!-- <img src="http://digitalart.io/wp-content/uploads/2014/03/Armoured-Suit-Sci-fi-Wallpaper.jpg"> -->
+          <% if post.image.present? %>
+          <%= image_tag (post.image.slider) %>
+          <% end %>
+        </div>
+        <hr>
+        <div class="comment-section">
+          <a class="like" href="#">Gilla</a>
+          <a class="comment" href="#">Kommentera</a>
+          <a class="share" href="#">Dela</a>
+        </div>
+      </div> <!-- end right-field -->
+    <% end %>
+  </div>
+</div>
 </div>

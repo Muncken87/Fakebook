@@ -42,12 +42,13 @@
       width: 16px
       margin-right: 5px
 
-
-
   .post-user-info
     margin-bottom: 1em
     color: #365899
     font-weight: bold
+
+    .username
+      text-decoration: none
 
     .delete
       position: absolute
@@ -88,6 +89,9 @@
   .post-content
     word-break: break-word
 
+    p
+      margin-bottom: 1rem
+
   .post-image
 
   .comment-section
@@ -97,26 +101,26 @@
       text-decoration: none
       margin-right: 1em
 
+      &:before
+        background-image: url('/assets/icons.png')
+
       &:hover
         text-decoration: underline
 
     .share
       &:before
-        background-image: url('/assets/icons.png')
         background-position: -45px -181px
         +icons
 
     .comment
       &:before
-        background-image: url('/assets/icons.png')
         background-position: -32px -164px
         +icons
 
-  .like
-    &:before
-      background-image: url('/assets/icons.png')
-      background-position: -47px -164px
-      +icons
+    .like
+      &:before
+        background-position: -47px -164px
+        +icons
 
 .sidebar
   background-color: #fff

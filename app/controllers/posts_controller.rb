@@ -16,6 +16,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @post = Post.find(params[:id])
   end
 
   # POST /posts
@@ -45,9 +46,11 @@ class PostsController < ApplicationController
       if @post.update(params[:post].permit(:image,:content))
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
+        format.json { respond_with_bip(@post) }
       else
         format.html { render :edit }
         format.json { render json: @post.errors, status: :unprocessable_entity }
+        format.json { respond_with_bip(@post) }
       end
     end
   end
@@ -62,6 +65,7 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

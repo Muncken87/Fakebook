@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require best_in_place
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
@@ -18,4 +19,8 @@ $(function() {
   setTimeout(function(){
     $('.notice,.alert').fadeOut(500);
   }, 1000);
+});
+$(document).ready(function() {
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
 });
