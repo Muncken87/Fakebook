@@ -1,7 +1,12 @@
 <div class="container">
   <div class="user-jumbo">
   <div class="jumbo-user-details">
+    <div class="user-avatar-box">
     <%= image_tag current_user.avatar %>
+      <%= label(:user, :avatar) %>
+      <%= file_field :avatar, @user, id: 'user_avatar' %>
+      <div class="small-box"></div>
+    </div>
     <h3><%= current_user.username %></h3>
   </div>
   </div>
@@ -21,6 +26,7 @@
 <div class="row">
   <div class="four columns card user-show-experience">
     <p class="intro">Introduction</p>
+    <hr>
     <ul>
       <li class="work">Tidigare Ruby on Rails Developer vid CareerFoundry</li>
       <li class="work">Tidigare Webbutvecklare vid Sponsorhjälpen AB</li>
