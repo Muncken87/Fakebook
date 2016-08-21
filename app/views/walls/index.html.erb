@@ -19,10 +19,10 @@
           <%= image_tag post.avatar %>
           <%= link_to post.username, user_path(post.user),class: 'username' %>
           <small class="post-submitted"> Submitted <%= time_ago_in_words(post.created_at) %> Ago </small>
-          <% if current_user.id == @post.user_id %>
+
           <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete" %>
            <%= link_to 'Edit', edit_post_path(post)%>
-          <% end %>
+      
 
         </div>
 
