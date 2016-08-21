@@ -19,20 +19,24 @@
           <%= image_tag post.avatar %>
           <%= link_to post.username, user_path(post.user),class: 'username' %>
           <small class="post-submitted"> Submitted <%= time_ago_in_words(post.created_at) %> Ago </small>
+          <% if current_user.id == @post.user_id %>
           <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete" %>
-            <%= link_to 'Edit', edit_post_path(post)%>
+           <%= link_to 'Edit', edit_post_path(post)%>
+          <% end %>
+
         </div>
 
         <div class="post-content">
-            <%= post.content %>
-              <p><%= embed post.content %></p>
+            <p><%=  post.content  %></p>
+          <% if post.youtube_url.present? %>
+            <div class="video"><%= embed (post.youtube_url) %></div>
+          <% end %>
         </div>
-      <div class="post-image">
-        <!-- <img src="http://digitalart.io/wp-content/uploads/2014/03/Armoured-Suit-Sci-fi-Wallpaper.jpg"> -->
         <% if post.image.present? %>
-          <%= image_tag (post.image.slider) %>
+          <div class="post-image">
+            <%= image_tag (post.image.slider) %>
+          </div>
         <% end %>
-      </div>
       <hr>
       <div class="comment-section">
         <a class="like" href="#">Gilla</a>

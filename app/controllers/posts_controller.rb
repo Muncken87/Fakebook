@@ -22,11 +22,11 @@ class PostsController < ApplicationController
 
   # POST /posts
   # POST /posts.json
+
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     @post.user = current_user
-    @post.image = params[:image]
     respond_to do |format|
      if @post.save
         format.html { redirect_to root_path }
@@ -44,7 +44,7 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     @post.save
     respond_to do |format|
-      if @post.update(params[:post].permit(:image,:content))
+      if @post.update(params[:post].permit(:image,:content,:youtube_url))
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
         format.json { respond_with_bip(@post) }
@@ -76,6 +76,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:content, :image, :username, :avatar)
+      params.require(:post).permit(:content, :image, :username, :avatar, :youtube_url,:image_cache)
     end
 end

@@ -15,13 +15,14 @@
     <%= label(:post, :image) %>
     <%= f.file_field :image, value: "placeholder text"  %>
     <%= f.hidden_field :image_cache %>
+    <%= f.text_area :youtube_url, value: "Enter youtube link here" %>
     <hr>
     <div class=" content-area">
       <div class="content-profile-img">
 
       </div>
       <div class="content-text">
-        <%= f.text_area :content, placeholder: "What are you doing right now?",id: 'youTubeUrl' %>
+        <%= f.text_area :content, placeholder: "What are you doing right now?" %>
       </div>
       <div class="u-cf"></div>
     </div>
