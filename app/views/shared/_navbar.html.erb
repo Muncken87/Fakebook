@@ -11,10 +11,11 @@
 
     <div class="user-edit">
       <%= link_to current_user do %>
-
-
         <% if user_signed_in? %>
-          <span><%= current_user.username %></span>
+          <span>
+            <%= image_tag current_user.avatar %>
+            <%= current_user.username %>
+          </span>
         <% else %>
           <%= link_to 'Login', new_user_session_path %>
           <%= link_to 'Sign up', new_user_registration_path %>
@@ -26,6 +27,7 @@
     <span><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></span>
     <% end %>
   </div>
+
     <!-- <% if user_signed_in? %>
     <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
     <% else %>

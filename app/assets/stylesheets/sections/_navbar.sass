@@ -9,10 +9,17 @@
     color: $white
     margin-right: 2em
     text-decoration: none
+    line-height: 26px
+
+    @media (max-width: 662px)
+      margin-bottom: 0.5em
 
   input[type="search"],input[type="submit"]
     margin: 5px 0px 0px
     border: none
+    height: 24px
+    line-height: 24px
+    margin-top: 2px
 
     @media (max-width: 662px)
       display: block
@@ -30,7 +37,7 @@
     border-left: none
     border-radius: 0px 4px 4px 0px
     margin-bottom: 0
-    line-height: 16px
+    line-height: 4px
     background-color: $white
     border-color: $white
     color: $black
@@ -42,30 +49,34 @@
 
   .user-edit
     text-decoration: none
-    margin-top: 5px
     display: table
     float: left
     margin-left: 10px
 
     &:hover
       background-color: lighten($dark-blue, 10%)
+      border-radius: 4px
     a,span
       text-decoration: none
       display: inline-block
-      line-height: 40px
-      padding: 0 10px 
+
+    a
+      line-height: 23px
 
     img
-      height: 38px
-      width: 38px
-      margin-right: 1em
+      height: 24px
+      width: 24px
       border-radius: 4px
       vertical-align: middle
+      margin-right: 0.5em
+      margin-bottom: 2px
 
     span
       vertical-align: middle
       color: $white
-      line-height: 40px
+      height: 26px
+      padding: 0px 10px 0px 0px
+      line-height: 27px
 
     @media (max-width: 1020px)
       display: none
