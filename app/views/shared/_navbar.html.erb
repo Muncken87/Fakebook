@@ -13,7 +13,6 @@
       <%= link_to current_user do %>
         <% if user_signed_in? %>
           <span>
-            <%= image_tag current_user.avatar %>
             <%= current_user.username %>
           </span>
         <% else %>
