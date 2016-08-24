@@ -10,7 +10,7 @@
   <div class="eight columns right-field">
     <%= render "posts/form" %>
 
-    <% @posts.each do |post| %>
+    <% @posts.each do |post|  %>
       <div class="card animated fadeIn">
       <!-- <p><%= link_to 'Show', post %></p>
       <p><%= link_to 'Edit', edit_post_path(post) %></p>
@@ -21,16 +21,10 @@
           <small class="post-submitted"> Submitted <%= time_ago_in_words(post.created_at) %> Ago </small>
 
           <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete" %>
-           <%= link_to 'Edit', edit_post_path(post)%>
-      
-
+          <%= link_to 'Edit', edit_post_path(post)%>
         </div>
-
         <div class="post-content">
-            <p><%=  post.content  %></p>
-          <% if post.youtube_url.present? %>
-            <div class="video"><%= embed (post.youtube_url) %></div>
-          <% end %>
+            <p><%= embed post.content %></p>
         </div>
         <% if post.image.present? %>
           <div class="post-image">

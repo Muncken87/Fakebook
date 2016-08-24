@@ -3,9 +3,10 @@
   <div class="jumbo-user-details">
     <div class="user-avatar-box">
     <%= image_tag current_user.avatar %>
-      <%= label(:user, :avatar) %>
-      <%= file_field :avatar, @user, id: 'user_avatar' %>
-      <div class="small-box"></div>
+      <!-- <%= label(:user, :avatar) %> -->
+      <div>
+      <!-- <%= file_field :avatar, @user, id: 'user_avatar' %> -->
+    </div>
     </div>
     <h3><%= current_user.username %></h3>
   </div>
@@ -19,10 +20,8 @@
       <a href="#"> More</a>
     </div>
   </div>
-  <!-- <%= render 'form' %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %> -->
+<!-- <%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>  -->
 <div class="row">
   <div class="four columns card user-show-experience">
     <p class="intro">Introduction</p>
@@ -35,6 +34,7 @@
     </ul>
   </div>
   <div class="eight columns right-field">
+    <%= render partial: 'shared/form' %>
     <% @posts.each do |post| %>
       <div class="card">
         <!-- <p><%= link_to 'Show', post %></p>
@@ -42,13 +42,14 @@
         <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p> -->
         <div class="post-user-info">
           <%= image_tag post.avatar %>
+          <div class="small-box"></div>
           <%= post.username %>
           <small class="post-submitted"> Submitted <%= time_ago_in_words(post.created_at) %> Ago </small>
           <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete" %>
         </div>
 
         <div class="post-content">
-          <p><%= post.content %></p>
+          <p><%= embed post.content %></p>
         </div>
         <div class="post-image">
           <!-- <img src="http://digitalart.io/wp-content/uploads/2014/03/Armoured-Suit-Sci-fi-Wallpaper.jpg"> -->
@@ -65,5 +66,5 @@
       </div> <!-- end right-field -->
     <% end %>
   </div>
-</div>
-</div>
+</div> <!-- end row -->
+</div> <!-- end container -->

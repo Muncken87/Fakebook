@@ -8,7 +8,9 @@ end
 def show
   @post = @user.posts(params[:page])
   @posts = Post.where(:user_id => params[:id]).order("created_at DESC")
+  @post = Post.new
 end
+
 
 def edit
   @user = User.find(params[:id])

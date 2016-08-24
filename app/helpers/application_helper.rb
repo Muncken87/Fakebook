@@ -7,10 +7,21 @@ module ApplicationHelper
      end
   end
   ## ...
+#(?:http:\/\/www\.|http:\/\/|www\.)(?:youtube\.com\/watch\?v=(?:\w+)|domain\.com\/image.(?:jpg|png|gif)|domain\.com)
+#/(https:\/\/w{3}.youtube.com\/watch\?v=\w*)/
+#{}/(youtu\.be\/|youtube\.com\/(watch\?(.*&)?v=|(embed|v)\/))([^\?&"'>]+)/
+  def embed(string)
 
-  def embed(youtube_url)
-    youtube_id = youtube_url.split("=").last
-    content_tag(:iframe, nil, src: "//www.youtube.com/embed/#{youtube_id}")
+    text, link = string.partition(/(?:http:\/\/www\.|https:\/\/|www\.)(?:youtube\.com\/watch\?v=(?:\w+)|domain\.com\/image.(?:jpg|png|gif)|domain\.com)/)
+    text_html = text.empty? ? nil : content_tag(:p, text.gsub("https://", ""))
+    iframe = link.empty? ? nil : content_tag(:iframe, nil, {src: embed_code(link)})
+    text_html + iframe
   end
+
+  def embed_code(string)
+    code = string.split("v=").last
+    "https://www.youtube.com/embed/#{code}"
+  end
+
 
 end

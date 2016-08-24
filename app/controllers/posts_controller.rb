@@ -45,7 +45,7 @@ class PostsController < ApplicationController
     @post.save
     respond_to do |format|
       if @post.update(params[:post].permit(:image,:content,:youtube_url))
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
         format.json { respond_with_bip(@post) }
       else
