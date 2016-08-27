@@ -108,18 +108,36 @@
         border-left: 1px solid #e9eaed
 
 .user-show-experience
+  position: relative
   .intro
     font-weight: bold
     margin: 0
+
+  .globe
+    height: 24px
+    width: 24px
+    margin-right: 0.5rem
+
+  .edit-user
+    text-align: right
+
     &:before
       +introduction
       background-image: image-url('icons2.png')
-      background-position: 0 -22px
+      background-position: 0 -141px
+      background-size: 27px 219px
+      height: 12px
+      width: 12px
       display: inline-block
-      float: left
-      margin-right: 1rem
+      opacity: .4
+
+    // &:hover
+    //   background-color: #3b5998
+
+
   ul
     margin: 0
+
     li
       font-size: 12px
       text-decoration: none

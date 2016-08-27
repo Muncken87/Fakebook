@@ -5,6 +5,8 @@ class WallsController < ApplicationController
     @post = Post.new
     @walls = Wall.all.includes(:user, :post).to_json(:include => [{post: {only: %i(username image content youtube_url)}},{:user => {only: %i(id)}}])
     respond_with @wall
+    @user = User.all
   end
+
 
 end

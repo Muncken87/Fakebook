@@ -23,6 +23,7 @@ end
 def create
   @user = User.new(user_params)
   @user.avatar = params[:avatar]
+  @user.cover_photo = params[:cover_photo]
   @user.save
   respond_to do |format|
     if @user.save
@@ -36,7 +37,7 @@ def create
 end
 
 def update
-    if @user.update(params[:user].permit(:first_name,:last_name,:avatar,:email))
+    if @user.update(params[:user].permit(:first_name,:last_name,:avatar,:email,:cover_photo))
       redirect_to @user
     else
       render 'edit'
@@ -60,6 +61,6 @@ private
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :avatar,:avatar_cache)
+    params.require(:user).permit(:first_name, :last_name, :avatar,:avatar_cache,:cover_photo)
   end
 end

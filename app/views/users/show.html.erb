@@ -2,13 +2,13 @@
   <div class="user-jumbo">
   <div class="jumbo-user-details">
     <div class="user-avatar-box">
-    <%= image_tag current_user.avatar %>
+      <%= image_tag (@user.avatar.avatar) %>
       <!-- <%= label(:user, :avatar) %> -->
       <div>
       <!-- <%= file_field :avatar, @user, id: 'user_avatar' %> -->
     </div>
     </div>
-    <h3><%= current_user.username %></h3>
+    <h3><%= @user.username %></h3>
   </div>
   </div>
   <div class="time-line card">
@@ -22,9 +22,14 @@
   </div>
 <!-- <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>  -->
+
 <div class="row">
   <div class="four columns card user-show-experience">
-    <p class="intro">Introduction</p>
+    <%= image_tag 'globe.png', class: 'two columns globe' %>
+    <p class="intro six columns ">Introduction
+    </p>
+    <%= link_to '', edit_user_path(@user), class: 'edit-user four columns' %>
+    <div class="u-cf"></div>
     <hr>
     <ul>
       <li class="work">Tidigare Ruby on Rails Developer vid CareerFoundry</li>
@@ -39,7 +44,7 @@
       <div class="card">
         <!-- <p><%= link_to 'Show', post %></p>
         <p><%= link_to 'Edit', edit_post_path(post) %></p>
-        <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p> -->
+        <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>  -->
         <div class="post-user-info">
           <%= image_tag post.avatar %>
           <div class="small-box"></div>

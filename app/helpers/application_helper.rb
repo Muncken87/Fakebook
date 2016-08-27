@@ -11,10 +11,9 @@ module ApplicationHelper
 #/(https:\/\/w{3}.youtube.com\/watch\?v=\w*)/
 #{}/(youtu\.be\/|youtube\.com\/(watch\?(.*&)?v=|(embed|v)\/))([^\?&"'>]+)/
   def embed(string)
-
     text, link = string.partition(/(?:http:\/\/www\.|https:\/\/|www\.)(?:youtube\.com\/watch\?v=(?:\w+)|domain\.com\/image.(?:jpg|png|gif)|domain\.com)/)
     text_html = text.empty? ? nil : content_tag(:p, text.gsub("https://", ""))
-    iframe = link.empty? ? nil : content_tag(:iframe, nil, {src: embed_code(link)})
+    iframe = link.empty? ? nil : content_tag(:iframe, nil, {src: embed_code(link)},:allowFullScreen => "true")
     text_html + iframe
   end
 
