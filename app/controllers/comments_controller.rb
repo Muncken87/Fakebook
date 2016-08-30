@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
   before_action :find_post
-  before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   def index
     @comments = @post.comment
