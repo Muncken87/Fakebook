@@ -17,5 +17,11 @@
     <% end %>
     <%= render partial: "shared/navbar" %>
     <%= yield %>
+
+    <script>
+      $(document).on('turbolinks:load', function() {
+        $('textarea.js-auto-size').textareaAutoSize();
+      });
+    </script>
   </body>
 </html>

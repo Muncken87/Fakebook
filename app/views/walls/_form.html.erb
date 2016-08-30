@@ -1,0 +1,6 @@
+<div class="comments">
+<%= form_for (Comment.new) do |f| %>
+    <%= f.text_area :content, class: 'comments js-auto-size', id: 'alex2' ,:rows => 1  %>
+    <%= f.submit "Submit", class: "btn btn-default" %>
+  <% end %>
+</div>

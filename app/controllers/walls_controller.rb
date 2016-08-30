@@ -1,12 +1,14 @@
 class WallsController < ApplicationController
   respond_to :json, :html
+
+
   def index
     @posts = Post.order("created_at DESC")
     @post = Post.new
-    @walls = Wall.all.includes(:user, :post).to_json(:include => [{post: {only: %i(username image content youtube_url)}},{:user => {only: %i(id)}}])
+    @walls = Wall.all.includes(:user, :post, :comment).to_json(:include => [{post: {only: %i(username image content youtube_url)}},{:user => {only: %i(id)}},{:comment => {only: %i(content)}}])
     respond_with @wall
     @user = User.all
+    @comment = Comment.new
+    @comments = Comment.order("created_at DESC")
   end
-
-
 end

@@ -114,26 +114,42 @@
     margin: 0
 
   .globe
+    +introduction
+    background-image: image-url('globe.png')
+    background-size: cover
+    display: inline-block
     height: 24px
     width: 24px
     margin-right: 0.5rem
 
-  .edit-user
-    text-align: right
+  a
+    height: 18px
+    width: 18px
+    position: relative
+    padding: 3px
+    border-radius: 3px
+    float: right
+    display: inline-block
 
-    &:before
+    &:hover
+      background-color: #3b5998 
+
+    &:hover .edit-user
+      opacity: 1
+      background-image: image-url('icons2.png')
+      background-size: 27px 219px
+      background-position: -13px -141px
+
+    .edit-user
+      text-align: right
       +introduction
       background-image: image-url('icons2.png')
-      background-position: 0 -141px
       background-size: 27px 219px
+      background-position: 0 -141px
       height: 12px
       width: 12px
-      display: inline-block
-      opacity: .4
-
-    // &:hover
-    //   background-color: #3b5998
-
+      display: block
+      opacity: .6
 
   ul
     margin: 0
