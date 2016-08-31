@@ -13,12 +13,11 @@
       <%= link_to current_user do %>
         <% if user_signed_in? %>
           <span>
-            <%= image_tag current_user.avatar %>
+              <%= image_tag (current_user.avatar.minimini) %>
             <%= current_user.username %>
           </span>
         <% else %>
-          <%= link_to 'Login', new_user_session_path %>
-          <%= link_to 'Sign up', new_user_registration_path %>
+          <%= link_to 'Login', new_user_session_path, class: 'login' %>   <%= link_to 'Sign up', new_user_registration_path %>
         <% end %>
         <% end %>
     </div>

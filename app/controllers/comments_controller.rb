@@ -2,16 +2,16 @@ class CommentsController < ApplicationController
   before_action :find_post
 
   def index
-    @comments = @post.comment
+
   end
 
   def new
-    @comment = Comment.new
-    @comment = @post.comment.build
+    @post = Post.find(params[:post_id])
+    @comment = Comment.new(:post => @post)
   end
 
   def create
-    @comment = @post.comments.create(params[:comment].permit(:content))
+    @comment = @post.comments.build(comment_params)
     @comment.post_id = @post.id
     @comment.user_id = current_user.id
     # @comment = @post.comments.create(params[:comment].permit[:content])
@@ -33,6 +33,10 @@ class CommentsController < ApplicationController
 
     def find_post
       @post = Post.find(params[:post_id])
+    end
+
+    def comment_params
+      params.require(:comment).permit(:content,:user_id,:post_id)
     end
 
 

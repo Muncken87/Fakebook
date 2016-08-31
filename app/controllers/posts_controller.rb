@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   # POST /posts.json
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.create(post_params)
     @post.user_id = current_user.id
     @post.user = current_user
     respond_to do |format|
@@ -58,6 +58,10 @@ class PostsController < ApplicationController
       format.html { redirect_to root_path, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def show
+    @comments = Comment.all
   end
 
 

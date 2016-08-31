@@ -1,7 +1,6 @@
 class WallsController < ApplicationController
   respond_to :json, :html
 
-
   def index
     @posts = Post.order("created_at DESC")
     @post = Post.new
@@ -9,6 +8,6 @@ class WallsController < ApplicationController
     respond_with @wall
     @user = User.all
     @comment = Comment.new
-    @comments = Comment.order("created_at DESC")
+    @comment = @post.comments
   end
 end
