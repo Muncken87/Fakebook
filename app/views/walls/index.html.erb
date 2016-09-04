@@ -38,7 +38,7 @@
       <% post.comments.each do |comment| %>
       <p class="comment-img ">  <%= image_tag (current_user.avatar.mini) %> </p>
         <div class="comment-content">
-          <span class="comment-text"><%= link_to  current_user.username, class: "comment-name"%>
+          <span class="comment-text"><%= link_to  comment.user.username, class: "comment-name"%>
             <span><%= comment.content %></span>
           </span>
           <span class="comment-time"> <%= time_ago_in_words(comment.created_at).capitalize %> Ago <%= comment.created_at.strftime("%b %d, %Y") %></span>
