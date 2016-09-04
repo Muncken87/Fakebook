@@ -33,9 +33,24 @@
         <a class="share" href="#">Dela</a>
       </div>
     </div> <!-- end card -->
+
+    <div class="comments-box">
+      <% post.comments.each do |comment| %>
+      <p class="comment-img ">  <%= image_tag (current_user.avatar.mini) %> </p>
+        <div class="comment-content">
+          <span class="comment-text"><%= link_to  current_user.username, class: "comment-name"%>
+            <span><%= comment.content %></span>
+          </span>
+          <span class="comment-time"> <%= time_ago_in_words(comment.created_at).capitalize %> Ago <%= comment.created_at.strftime("%b %d, %Y") %></span>
+        </div>
+      <% end %>
+      <%= form_for ([post, post.comments.build]) do |f| %>
+          <%= f.text_area :content, class: 'comments js-auto-size', id: 'alex2' ,:rows => 1, placeholder: 'Write a comment'  %>
+          <%= f.submit "Submit", class: "btn btn-default" %>
+      <% end %>
+    </div>
   <% end %>
-  <%= render 'form'  %>
-<%= render 'comments'  %>
+
 </div> <!-- end right-field -->
   <!-- <div class="sidebar">
     <p>users</p>

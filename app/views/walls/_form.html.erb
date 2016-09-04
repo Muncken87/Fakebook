@@ -1,7 +1,4 @@
-<div class="comments">
-<%= form_for ([@post, @post.comments.build]) do |f| %>
-    <%= f.text_area :content, class: 'comments js-auto-size', id: 'alex2' ,:rows => 1  %>
+<%= form_for ([post, post.comments.build]) do |f| %>
+    <%= f.text_area :content, class: 'comments js-auto-size', id: 'alex2' ,:rows => 1, value: "Write something"  %>
     <%= f.submit "Submit", class: "btn btn-default" %>
-    <%= f.hidden_field :post_id, value: @post.id %>
   <% end %>
-</div>

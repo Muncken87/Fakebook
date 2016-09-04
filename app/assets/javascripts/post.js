@@ -3,3 +3,9 @@ $('#button').on('click', function() {
 
   return false;
 });
+
+$('#alex2').keypress(function(e){
+      if(e.which == 13){
+           $(this).closest('submit').submit();
+       }
+});

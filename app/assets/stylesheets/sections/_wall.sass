@@ -19,128 +19,220 @@
 // Post Content
 .right-field
 
-  label
-    color: #555
-    padding: 0 16px 0px 0px
-    line-height: 22px
-    display: inline-block
-    cursor: pointer
+  .card
+    margin-bottom: 0
+    border-radius: 4px 4px 0px 0px
 
-    &:hover
-      background-color: #f6f7f9
-      border-radius: 2px
-
-
-    &:before
-      background-image: image-url('fb-icons.png')
-      background-position: 0px -303px
-      background-size: 41px 331px
-      content: ''
+    label
+      color: #555
+      padding: 0 16px 0px 0px
+      line-height: 22px
       display: inline-block
-      height: 16px
-      width: 16px
-      margin-right: 5px
-
-  .post-user-info
-    margin-bottom: 1em
-    color: #365899
-    font-weight: bold
-
-    .username
-      text-decoration: none
-
-    .post-edit
-      position: absolute
-      right: 14px
-      top: 10px
-      text-decoration: none
-
-    small
-      font-weight: normal
-
-    img
-      height: 40px
-      width: 40px
-      float: left
-      margin-right: 1rem
-
-    &:after
-      display: table
-      content: ""
-      clear: both
-
-    .post-user-image
-      width: 40px
-      height: 40px
-      float: left
-      margin-right: 0.5em
-
-    .post-user-name
-      margin: 0
-      width: 100%
-      color: #365899
-      display: block
-
-    .post-submitted
-      display: block
-      color: #90949c
-
-  .post-content
-    word-break: break-word
-
-    iframe,object,embed
-      position: relative
-      width: 100%
-      min-height: 328px
-      border: none
-
-    p
-      margin-bottom: 1rem
-
-  .comment-section
-
-    .share,.comment,.like
-      color: #AFB4BD
-      text-decoration: none
-      margin-right: 1em
-
-      &:before
-        background-image: url('/assets/icons.png')
+      cursor: pointer
 
       &:hover
-        text-decoration: underline
+        background-color: #f6f7f9
+        border-radius: 2px
 
-    .share
       &:before
-        background-position: -45px -181px
-        +icons
+        background-image: image-url('fb-icons.png')
+        background-position: 0px -303px
+        background-size: 41px 331px
+        content: ''
+        display: inline-block
+        height: 16px
+        width: 16px
+        margin-right: 5px
 
-    .comment
-      &:before
-        background-position: -32px -164px
-        +icons
+    .post-user-info
+      margin-bottom: 1em
+      color: #365899
+      font-weight: bold
 
-    .like
-      &:before
-        background-position: -47px -164px
-        +icons
+      .username
+        text-decoration: none
 
-.sidebar
-  background-color: #fff
-  width: 210px
-  height: 100vh
-  padding: 0.5em
-  position: fixed
-  top: 0
-  right: 0
-  border-left: 1px solid #ccc
+      .post-edit
+        position: absolute
+        right: 14px
+        top: 10px
+        text-decoration: none
 
-.comments
-  display: block
-  width: 100%
-  max-width: 100%
-  min-height: 32px
-  word-wrap: break-word
-  border-radius: 0px
-  overflow: hidden
-  resize: none
+      small
+        font-weight: normal
+
+      img
+        height: 40px
+        width: 40px
+        float: left
+        margin-right: 1rem
+
+      &:after
+        display: table
+        content: ""
+        clear: both
+
+      .post-user-image
+        width: 40px
+        height: 40px
+        float: left
+        margin-right: 0.5em
+
+      .post-user-name
+        margin: 0
+        width: 100%
+        color: #365899
+        display: block
+
+      .post-submitted
+        display: block
+        color: #90949c
+
+    .post-content
+      word-break: break-word
+
+      iframe,object,embed
+        position: relative
+        width: 100%
+        min-height: 328px
+        border: none
+
+      p
+        margin-bottom: 1rem
+
+    .comment-section
+
+      .share,.comment,.like
+        color: #AFB4BD
+        text-decoration: none
+        margin-right: 1em
+
+        &:before
+          background-image: url('/assets/icons.png')
+
+        &:hover
+          text-decoration: underline
+
+      .share
+        &:before
+          background-position: -45px -181px
+          +icons
+
+      .comment
+        &:before
+          background-position: -32px -164px
+          +icons
+
+      .like
+        &:before
+          background-position: -47px -164px
+          +icons
+
+  .sidebar
+    background-color: #fff
+    width: 210px
+    height: 100vh
+    padding: 0.5em
+    position: fixed
+    top: 0
+    right: 0
+    border-left: 1px solid #ccc
+
+.comments-box
+  background-color: #F6F7F9
+  position: relative
+  top: -1px
+  padding: 0.75em
+  border-top: 0
+  border: 1px solid #ece8e8
+  margin-bottom: 2.5rem
+  line-height: 1.8rem
+
+  .comment-img
+    margin: 0
+    float: left
+    margin-right: 0.5rem
+
+    img
+      width: 32px
+      height: 32px
+
+      &:after
+        border: 1px solid rgba(0, 0, 0, .1)
+        bottom: 0
+        content: ''
+        left: 0
+        position: absolute
+        right: 0
+        top: 0
+
+  form
+    margin: 0
+
+    #alex2
+      line-height: 24px
+
+    .comments
+      display: block
+      width: 100%
+      max-width: 100%
+      min-height: 32px
+      word-wrap: break-word
+      border-radius: 0px
+      overflow: hidden
+      resize: none
+      border: 1px solid #ece8e8
+
+  .comment-content
+    padding-bottom: 2rem
+    width: 100%
+    max-width: 100%
+    font-size: 13px
+    padding-left: 37px
+    position: relative
+
+    &:after
+      content: ''
+      clear: both
+
+    &:after
+      background-color: rgb(64, 128, 255)
+      bottom: 0px
+      content: ""
+      left: -11px
+      position: absolute
+      top: 0px
+      width: 2px
+      height: 100%
+      display: block
+
+
+    span
+      vertical-align: top
+
+    .comment-time
+      display: block
+      color: #90949c
+      vertical-align: top
+      line-height: 0
+      margin-top: 1rem
+
+    .comment-text
+      display: block
+      margin: 0
+      word-wrap: break-word
+      word-break: break-all
+      vertical-align: super
+      position: relative
+
+      a
+        text-decoration: none
+        vertical-align: super
+        &:hover
+          text-decoration: underline
+
+        &:first-child
+          font-weight: bold
+          margin-right: 0.5rem
+          vertical-align: super
+          float: left
