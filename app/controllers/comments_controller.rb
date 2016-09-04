@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comment_params)
     @comment.post_id = @post.id
     @comment.user_id = current_user.id
+    @comment.user = current_user
     # @comment = @post.comments.create(params[:comment].permit[:content])
     # @comment.post_id = @post.id
      if @comment.save

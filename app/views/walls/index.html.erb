@@ -36,7 +36,7 @@
 
     <div class="comments-box">
       <% post.comments.each do |comment| %>
-      <p class="comment-img ">  <%= image_tag (current_user.avatar.mini) %> </p>
+      <p class="comment-img ">  <%= image_tag (comment.user.avatar.mini) %> </p>
         <div class="comment-content">
           <span class="comment-text"><%= link_to  comment.user.username, class: "comment-name"%>
             <span><%= comment.content %></span>
