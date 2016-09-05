@@ -30,6 +30,11 @@
     <%= f.label :email %><br>
     <%= f.text_field :email,class: "form-control", autofocus: true %>
   </div>
+  <div class="field">
+    <%= f.label :cover_photo %><br>
+    <%= image_tag(@user.cover_photo) if @user.cover_photo? %>
+    <%= f.file_field :cover_photo %>
+  </div>
   <div class="actions">
     <%= f.submit "Submit", class: "btn btn-default" %>
   </div>

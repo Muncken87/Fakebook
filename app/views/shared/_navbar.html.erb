@@ -1,9 +1,6 @@
 <nav class="navbar">
   <div class="container">
-
-    <!-- <a class="logo three columns">Fakebook</a> -->
     <%= link_to 'Fakebook', root_path, class: 'logo three columns' %>
-
     <div class="search">
       <input type="search" placeholder="Sök efter personer, platser och saker"class="five columns">
       <input type="submit" class="button-primary" value="Go">
@@ -13,17 +10,17 @@
       <%= link_to current_user do %>
         <% if user_signed_in? %>
           <span>
-              <%= image_tag (current_user.avatar.mini) %>
+            <%= image_tag (current_user.avatar.mini) %>
             <%= current_user.username %>
           </span>
         <% else %>
           <%= link_to 'Login', new_user_session_path, class: 'login' %>   <%= link_to 'Sign up', new_user_registration_path %>
         <% end %>
-        <% end %>
-    </div>
+      <% end %>
+  </div>
     <div class="user-edit logout">
     <% if user_signed_in? %>
-    <span><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></span>
+      <span><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></span>
     <% end %>
   </div>
 
