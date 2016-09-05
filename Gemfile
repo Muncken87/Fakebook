@@ -34,6 +34,9 @@ gem 'rmagick'
 gem "animate-rails"
 gem 'best_in_place', '~> 3.0.1'
 gem 'simple_form'
+gem 'carrierwave'
+gem "fog-aws"
+gem "figaro"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
