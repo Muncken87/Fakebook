@@ -2,7 +2,11 @@
   <div class="user-jumbo">
   <div class="jumbo-user-details">
     <div class="user-avatar-box">
-      <%= image_tag (@user.avatar.avatar) %>
+      <% if @user.avatar.present? %>
+        <%= image_tag (@user.avatar.avatar) %>
+      <% else %>
+          <%= image_tag (@user.avatar) %>
+      <% end %>
       <!-- <%= label(:user, :avatar) %> -->
       <div>
       <!-- <%= file_field :avatar, @user, id: 'user_avatar' %> -->

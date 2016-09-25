@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 def index
-  @user = User.all
+  @users = User.all
 end
 
 def show
@@ -47,7 +47,7 @@ def update
 def destroy
   @user.destroy
   respond_to do |format|
-    format.html { redirect_to @wall, notice: 'Post was successfully destroyed.' }
+    format.html { redirect_to @user, notice: 'Post was successfully destroyed.' }
     format.json { head :no_content }
   end
 end
@@ -61,6 +61,6 @@ private
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :avatar,:avatar_cache,:cover_photo)
+    params.require(:user).permit(:first_name, :last_name, :avatar,:avatar_cache,:cover_photo,:email)
   end
 end

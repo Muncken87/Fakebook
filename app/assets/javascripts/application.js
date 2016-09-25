@@ -13,6 +13,7 @@
 //= require jquery
 //= require best_in_place
 //= require jquery-ui
+//= require socket.io
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .

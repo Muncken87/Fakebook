@@ -19,7 +19,11 @@
     <hr>
     <div class=" content-area">
       <div class="content-profile-img">
+        <% if @post.avatar.present? %>
           <%= image_tag current_user.avatar.mini %>
+          <% else %>
+              <%= image_tag current_user.avatar %>
+          <% end %>
       </div>
       <div class="content-text">
         <%= f.text_area :content, placeholder: "What are you doing right now?" %>

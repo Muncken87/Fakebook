@@ -1,1 +1,43 @@
-<h1>Users</h1>
+<div class="container listing-user">
+  <table class="table table-responsive">
+  <p id="notice"><%= notice %></p>
+  <h1>Listing Users</h1>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Admin</th>
+      <th>Email</th>
+      <th>Show user</th>
+      <th>Edit user</th>
+      <th>Destroy user</th>
+    </tr>
+  </thead>
+  <tbody>
+<% if user_signed_in? && current_user.admin %>
+      <% @users.each do |user| %>
+        <tr>
+          <th><%= user.id %></th>
+          <th><%= user.first_name %></th>
+          <th><%= user.last_name %></th>
+          <% if user.admin? %>
+            <th>Yes</th>
+          <% else %>
+            <th>No</th>
+          <% end %>
+          <th><%= user.email %></th>
+          <th><%= link_to 'Show', user %></th>
+          <th><%= link_to 'Edit', edit_user_path(user) %></th>
+          <th><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></th>
+        </tr>
+      <% end %>
+<% end %>
+  </tbody>
+  </table>
+<% if signed_in? && current_user.admin? %>
+  <div class="actions">
+    <%= link_to 'New User', new_user_path, class: "btn btn-default" %>
+  </div>
+<% end %>
+</div>

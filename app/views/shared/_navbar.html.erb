@@ -10,7 +10,11 @@
       <%= link_to current_user do %>
         <% if user_signed_in? %>
           <span>
-            <%= image_tag (current_user.avatar.mini) %>
+            <% if current_user.avatar.present? %>
+            <%= image_tag current_user.avatar.mini %>
+            <% else %>
+              <%= image_tag current_user.avatar %>
+            <% end %>
             <%= current_user.username %>
           </span>
         <% else %>
